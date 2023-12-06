@@ -1,0 +1,39 @@
+.footer{
+    background-color: black;
+    height: 100%;
+    color: white;
+}
+.footer-heading{
+    margin-left: 25px;
+    padding: 20px;
+}
+.footer-links{
+    margin-left: 30px;
+    color: grey;
+    font-size: medium;
+    font-weight: 600;
+    text-decoration: none;
+}
+.footer-main{
+    display: flex;
+    justify-content: space-evenly;
+}
+.linkedin{
+    margin-left: 30px;
+    color: white;
+    font-size: xx-large;
+}
+.twitter{
+    color: white;
+    font-size: xx-large;
+}
+.mail{
+    color: white;
+    font-size: xx-large;
+}
+.office{
+    color: gray;
+}
+.footer-flexed{
+    padding: 30px;
+}

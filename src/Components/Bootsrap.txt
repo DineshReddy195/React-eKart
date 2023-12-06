@@ -1,0 +1,18 @@
+ return state.map((element)=>element.id===product.id?{...element,qty:element.qty+1}:element)
+
+  if(present){
+                //Increase the Quantity
+                
+            }else{
+                const product=action.payload;
+                return [...state,{
+                    ...product,qty:1
+                }]
+            }
+
+            if(present1.qty===1){
+                return state.filter((element)=>element.id !==present1.id);
+            }else{
+                return state.map((element)=>element.id===product.id?{...element,qty:element.qty-1}:element)
+            }
+            break;

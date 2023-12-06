@@ -1,0 +1,25 @@
+.form-checkout{
+    width: 63%;
+    margin-left: 7%;
+}
+.names{
+   gap: 30px;
+}
+.f-name{
+    width:400px;
+}
+.s-name{
+    width: 400px;
+}
+.checkout-div{
+    gap: 20px;
+}
+.country{
+    width: 300px;
+}
+.state{
+    width: 300px;
+}
+.zip-code{
+    width: 200px;
+}

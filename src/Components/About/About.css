@@ -1,0 +1,7 @@
+.clothing{
+    width: 25%;
+}
+.services{
+    display: flex;
+    gap: 30px;
+}

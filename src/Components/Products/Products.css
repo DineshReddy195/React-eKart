@@ -1,0 +1,97 @@
+.buttons{
+    display:flex;
+    justify-content: center;
+}
+.image-class{
+    margin-top: 15px;
+    width: 80%;
+    height: 250px;
+}
+.gridded{
+    margin-left:25px ;
+}
+.products{
+    width: 100%;
+}
+.radios{
+    display: flex;
+    justify-content: space-evenly;
+}
+.mapped{
+    border-radius: 5px;
+    border: 2px solid black;
+    display: flex;
+    width: 300px;
+    height: 500px;
+    justify-content: center;
+    margin: 1rem;
+}
+.cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+/* Productdetail page css */
+.image-details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 660px;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+.details .left-panel{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    transform-origin:left ;
+    z-index: 1;
+    transition: 1s;
+}
+.details:hover .left-panel{
+    transform: rotateY(-135deg);
+}
+.details{
+        position: relative;
+        margin: 20px 0;
+        width: 660px;
+        height: 650px;
+        background-color: white;
+        transform-style: preserve-3d;
+        transform: perspective(2000px);
+        transition-duration: 1s;
+        box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5);
+        border-radius: 10%;
+}
+.details:hover{
+    z-index: 1000;
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+}
+.details .right-panel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.left-panel{
+    width: 100%;
+    border-right: 10px solid black;
+}
+.right-panel{
+    width: 100%;
+    margin-left: 20px;
+}
+.product-details{
+    max-width: 1000px;
+    margin: 100px auto;
+    /* margin-left: 20%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
