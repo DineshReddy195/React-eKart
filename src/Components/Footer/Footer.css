@@ -1,39 +1,109 @@
-.footer{
+.footer {
     background-color: black;
-    height: 100%;
     color: white;
-}
-.footer-heading{
-    margin-left: 25px;
     padding: 20px;
 }
-.footer-links{
+
+.footer-heading {
+    margin-left: 25px;
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.footer-links {
     margin-left: 30px;
     color: grey;
     font-size: medium;
     font-weight: 600;
     text-decoration: none;
 }
-.footer-main{
+
+.footer-main {
     display: flex;
     justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 20px 0;
 }
-.linkedin{
-    margin-left: 30px;
-    color: white;
-    font-size: xx-large;
-}
-.twitter{
-    color: white;
-    font-size: xx-large;
-}
-.mail{
-    color: white;
-    font-size: xx-large;
-}
-.office{
-    color: gray;
-}
-.footer-flexed{
+
+.footer-flexed {
     padding: 30px;
+}
+
+.linkedin, .twitter, .mail {
+    color: white;
+    font-size: 1.5em;
+    margin-left: 30px;
+}
+
+.office {
+    color: gray;
+    margin-left: 25px;
+}
+
+/* Media query for tablets (landscape and portrait) */
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-heading {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .footer-links, .office, .footer-flexed h2 {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .linkedin, .twitter, .mail {
+        font-size: 1.2em;
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .footer-flexed, .office {
+        padding: 10px;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .footer-main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .footer-heading {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .footer-links, .office {
+        font-size: 0.9em;
+        margin-left: 0;
+    }
+
+    .linkedin, .twitter, .mail {
+        font-size: 1em;
+        margin: 5px;
+    }
+
+    h2 {
+        font-size: 0.9em;
+    }
+
+    h4.office {
+        font-size: 0.8em;
+        text-align: center;
+    }
+}
+
+/* Aligning the copyright message for smaller screens */
+h2 {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 20px;
 }

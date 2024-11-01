@@ -45,7 +45,7 @@ function Products() {
         <img src={element.image} alt={element.title} className='image-class'/>
         <h4>{element.title.substring(0,18)}...</h4>
         <p className='lead fw-bold'>$ {element.price}</p>
-        <NavLink to={`/productdetail/${element.id}`}><button className='btn btn-outline-dark'>Buy Now</button></NavLink>
+        <NavLink to={`/productdetail/${element.id}`}><button className='btn btn-outline-dark'>View Details</button></NavLink>
       </div>
       </div>
         )

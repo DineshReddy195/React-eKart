@@ -1,11 +1,13 @@
-.named{
-    width: 40%;
-    height: 20%;
-    margin-left: 40%;
+.form_container{
+    width: 30%;
 }
-.register{
-    box-shadow: 0px 0px 10px grey;
-    width: 60%;
-    margin-top: 5%;
-    border-radius: 5%;
+@media screen and (max-width:1000px) {
+    .form_container{
+        width: 45%;
+    }
+}
+@media screen and (max-width:700px) {
+    .form_container{
+        width: 65%;
+    }
 }

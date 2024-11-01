@@ -1,14 +1,21 @@
-.header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+.img-class{
+    width: 5rem;
+    height: 5rem;
 }
-.cart-iems{
-background: rgba(255, 255, 255, 0.23);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(6.8px);
--webkit-backdrop-filter: blur(6.8px);
-border: 1px solid rgba(255, 255, 255, 0.33);
+.btn-black{
+    background-color: transparent;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    color: #000;
+    border-radius: 0;
+    border: 0.1rem #000 solid;
+}
+.btn-black:hover{
+    background: #000;
+    color: #fff;
+}
+.cart-icon{
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ffa400;
 }

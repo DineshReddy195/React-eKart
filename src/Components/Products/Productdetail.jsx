@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Products.css';
 import Scroll from '../Scroll/Scroll';
 import { myContext } from '../Context/Context';
 
 function Productdetail() {
-  const [product,setProduct]=useState([])
-  const {cart,setCart}=useContext(myContext)
+  const {addToCart,cart}=useContext(myContext)
+  const navigate=useNavigate()
     const [item,setItem]=useState({
         image:'',
         description:'',
@@ -16,33 +16,44 @@ function Productdetail() {
         rating:'',
         rate:''
     });
+
+    const isInCart = cart.some((cartItem) => cartItem.id === item.id);
+
+    const handleAddToCart=()=>{
+      addToCart(item);
+      navigate('/cart')
+    }
     const {id}=useParams()
     useEffect(()=>{
        fetch(`https://fakestoreapi.com/products/${id}`).then((res)=>res.json()).then((data)=>{console.log(data);setItem(data)})
-    },[])
-    const addItem=(item)=>{
-       
-    }
+    },[id])
   return (
-    <div>
-      <div className=" py-5 product-details">
-        <div className="row py-4 carded">
-           {item.length!==0?<div className='details'>
-           <div className='left-panel'>
-           <img src={item.image} alt={item.title} className='image-details'/></div>
-           <div className='right-panel'>
-            <h4 className='text-uppercase text-black-50'>{item.category}</h4>
-            <h2 className='display-6'>{item.title}</h2>
-            <p className='lead fw-bolder'>Rating: {item.rating&&item.rating.rate} <i className='fa fa-star'></i></p>
-            <h3 className='display-6 fw-bold my-4'>$ {item.price}</h3>
-            <p className="lead">{item.description}</p>
-            <button className='btn btn-outline-dark px-4 py-2' onClick={addItem(item)}>Add to cart</button>
-            <NavLink to='/cart' className='btn btn-dark ms-2 ps-3 py-2'>Go To Cart</NavLink>
-           </div>
-           </div>:<h1 className='text-danger'>No Data Found</h1>}
+    <div className='container py-5'>
+      <div className="row">
+        <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
+          <h1>{item.title}</h1>
         </div>
       </div>
-      <div>
+      <div className="row">
+        <div className="col-10 mx-auto col-md-6 my-3">
+          <img src={item.image} alt={item.title} className='img-fluid' />
+        </div>
+        <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
+          <h2>{item.title}</h2>
+          <h4 className='text-blue'>
+            <strong>Price: <span>$</span>{item.price}</strong>
+          </h4>
+          <p className="text-capitalize font-weight-bold mt-3 mb-0">
+            Some info about product:
+          </p>
+          <p className='text-muted lead'>{item.description}</p>
+
+          <div className='d-flex'>
+            <button className='btn btn-info m-3'>Buy Now</button>
+            <button className='btn btn-secondary m-3' onClick={handleAddToCart}>{isInCart?"In Cart":"Add To Cart"}</button>
+          </div>
+         
+        </div>
         <Scroll/>
       </div>
     </div>

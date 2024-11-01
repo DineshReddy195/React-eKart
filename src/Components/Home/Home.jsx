@@ -7,8 +7,7 @@ const Home = () => {
   return (
     <div className='main'>
       <div className='landing-page bg-dark text-white'>
-<div>
-  {/* <img src='https://images.pexels.com/photos/1860160/pexels-photo-1860160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='shopping' className='home-img'/> */}
+<div className='image'>
   <img src={doll} className='home-img' alt='shopping'/>
 </div>
 <div className='home-text'>
