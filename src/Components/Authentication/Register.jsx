@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import { myContext } from '../Context/Context';
 
 function Register() {
+  const navigate=useNavigate()
   const {register,setRegister}=useContext(myContext)
 
   const handleChange = (e) => {
@@ -32,6 +33,7 @@ function Register() {
     setRegister({ name: '', email: '', password: '' });
 
     alert('User registered successfully!');
+    navigate('/login')
   };
 
   return (
