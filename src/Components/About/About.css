@@ -5,3 +5,25 @@
     display: flex;
     gap: 30px;
 }
+@media screen and (max-width:480px) {
+    .services{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .clothing{
+        width: 45%;
+    }
+}
+@media screen and (max-width:720px) {
+    .services{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .clothing{
+        width: 45%;
+    }
+}

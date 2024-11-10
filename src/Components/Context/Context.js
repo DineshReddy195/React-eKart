@@ -20,14 +20,14 @@ const Cartfunction = ({ children }) => {
 
   // Calculate totals for the cart
   const getTotals = (cartItems) => {
-    const subTotal = cartItems.reduce((acc, item) => {
+    const subTotal = Math.ceil(cartItems.reduce((acc, item) => {
       const itemTotal = item.total || 0;
       return acc + itemTotal;
-    }, 0);
+    }, 0));
 
     const tempTax = subTotal * 0.1; //Tax is 10%
     const tax = parseFloat(tempTax.toFixed(2));//Used to fix to 2 decimal places
-    const total = subTotal + tax;
+    const total = Math.ceil(subTotal + tax);
     return { subTotal, tax, total };
   };
 
