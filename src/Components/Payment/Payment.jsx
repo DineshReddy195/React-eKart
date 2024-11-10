@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { myContext } from '../Context/Context';
 
-const Payments = ({ amount }) => {
+const Payments = ({ amount,isFromCart }) => {
   const navigate=useNavigate();
   const {clearCart}=useContext(myContext)
 
@@ -22,8 +22,10 @@ const Payments = ({ amount }) => {
         handler: (response) => {
           //alert(`Payment Successful: ${response.razorpay_payment_id}`);
           console.log("Payment Response: ", response);
-          clearCart();
-          navigate('/')
+          if (isFromCart) {
+            clearCart();
+          }
+          navigate('/');
         },
         prefill: {
           name: 'eKart',

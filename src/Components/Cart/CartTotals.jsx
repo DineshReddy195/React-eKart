@@ -29,7 +29,7 @@ const CartTotals = ({ history }) => {
           <h5><span className="text-title">subtotal:</span> <strong>${cartSubTotal}</strong></h5>
           <h5><span className="text-title">tax:</span> <strong>${cartTax}</strong></h5>
           <h5><span className="text-title">total:</span> <strong>${cartTotal}</strong></h5>
-          <Payments amount={amountInPaise} clearCart={clearCart} history={history} />
+          <Payments amount={amountInPaise} isFromCart={true} history={history} />
         </div>
       </div>
     </div>
