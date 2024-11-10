@@ -3,10 +3,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './Products.css';
 import Scroll from '../Scroll/Scroll';
 import { myContext } from '../Context/Context';
+import Payments from '../Payment/Payment';
 
 function Productdetail() {
   const {addToCart,cart}=useContext(myContext)
   const navigate=useNavigate()
+  const [showPayments,setShowPayments]=useState(false)
     const [item,setItem]=useState({
         image:'',
         description:'',
@@ -17,7 +19,15 @@ function Productdetail() {
         rate:''
     });
 
+    const handleBuynow=()=>{
+      setShowPayments(true);
+    }
+
     const isInCart = cart.some((cartItem) => cartItem.id === item.id);
+
+    const conversionRate=80;
+    const amountInINR=item.price*conversionRate;
+    const totalAmount=Math.round(amountInINR*100)
 
     const handleAddToCart=()=>{
       addToCart(item);
@@ -49,10 +59,10 @@ function Productdetail() {
           <p className='text-muted lead'>{item.description}</p>
 
           <div className='d-flex'>
-            <button className='btn btn-info m-3'>Buy Now</button>
+            <button className='btn btn-info m-3' onClick={handleBuynow}>Buy Now</button>
             <button className='btn btn-secondary m-3' onClick={handleAddToCart}>{isInCart?"In Cart":"Add To Cart"}</button>
           </div>
-         
+         {showPayments&&<Payments amount={totalAmount}/>}
         </div>
         <Scroll/>
       </div>
